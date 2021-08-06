@@ -1,0 +1,22 @@
+.add {
+  display: flex;
+}
+
+.add > input {
+  outline: 0;
+  border: 0;
+  width: 370px;
+  height: 30px;
+  font-size: 1em;
+}
+.add > button {
+  width: 60px;
+  height: 30px;
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+}
+
+.add > button:active {
+  background-color: aqua;
+}

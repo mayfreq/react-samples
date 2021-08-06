@@ -1,10 +1,18 @@
-import './App.css';
+import "./App.css";
+import TodoAdd from "./components/TodoAdd/TodoAdd";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   return (
-    <div>
-      <h1>Todo App</h1>
-    </div>
+    <main>
+        <div className="container">
+          <div className="title">
+            <h2>Todo App</h2>
+          </div>
+          <TodoAdd />
+          <TodoList />
+        </div>
+    </main>
   );
 }
 
