@@ -2,17 +2,41 @@ import React from "react";
 import TodoItem from "../TodoItem/TodoItem";
 import "./TodoList.css";
 
-const TodoList = () => {
+const TodoList = ({
+  todos,
+  deleteTodo,
+  changeState,
+  listAll,
+  listActive,
+  listComplated,
+}) => {
   return (
     <div className="list">
       <ul>
-        <TodoItem text="todo" />
+        {todos.map((val) => {
+          return (
+            <TodoItem
+              key={val.id}
+              id={val.id}
+              text={val.text}
+              state={val.state}
+              deleteTodo={deleteTodo}
+              changeState={changeState}
+            />
+          );
+        })}
       </ul>
-      <div class="option">
-        <span class="op1">22 items left</span>
-        <span class="op2">All</span>
-        <span class="op3">Active</span>
-        <span class="op4">Complated</span>
+      <div className="option">
+        <span className="op1">22 items left</span>
+        <span className="op2" onClick={listAll}>
+          All
+        </span>
+        <span className="op3" onClick={listActive}>
+          Active
+        </span>
+        <span className="op4" onClick={listComplated}>
+          Complated
+        </span>
       </div>
     </div>
   );
