@@ -1,10 +1,12 @@
 li {
   display: flex;
-  border-bottom: 1px solid #000;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(212, 208, 208);
   padding: 5px;
 }
 
-li > input[type="checkbox"] {
+li > input[type='checkbox'] {
   width: 20px;
   height: 20px;
   font-size: 1em;
@@ -25,6 +27,14 @@ li:last-child {
 
 .delete {
   margin-left: auto;
-  font-size: 1em;
   cursor: grab;
+  border: 1px solid silver;
+  padding: 5px 10px 5px 10px;
+  font-size: 10px;
+  border-radius: 10px;
+}
+
+.delete:hover {
+  cursor: pointer;
+  background-color: rgb(240, 237, 237);
 }

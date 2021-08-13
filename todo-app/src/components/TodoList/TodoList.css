@@ -1,6 +1,5 @@
 ul {
   list-style: none;
-  border:1px solid #000;
   width: 430px;
 }
 
@@ -11,25 +10,24 @@ ul {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 5px;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.op2 {
-  cursor: grab;
-  margin-left: auto;
+.active {
+  background-color: rgb(25, 109, 59);
+  color: white;
 }
 
-.op3 {
+.op {
   cursor: grab;
   margin-left: auto;
-}
-.op4 {
-  cursor: grab;
-  margin-left: auto;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
 }
 
-.complated {
-  background-color: green;
+.op:first-child {
+  margin: 0;
 }

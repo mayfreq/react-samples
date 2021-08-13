@@ -1,6 +1,5 @@
 main {
-  height: 100vh;
-  background-color: #ccede4;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
