@@ -35,6 +35,7 @@ ul {
 li {
   height: 30vh;
   flex:1 1 auto;
+  margin:3px;
 }
 
 li:last-child {

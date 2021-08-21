@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import getDefaultPhoto from './api';
 
 const App = () => {
+  const [photos, setPhotos] = useState([]);
+  useEffect(async() => {
+    setPhotos(await getDefaultPhoto());
+  }, []);
 
+  const listPhotos = () => {
+    return photos.length!=0 ? photos.map((val,index)=>{return <li key={index}>
+      <img src={val.photoUrl} alt="" />
+    </li>}):null;
+  };
   return (
     <React.Fragment>
       <div className="form">
@@ -10,16 +20,7 @@ const App = () => {
       </div>
       <div className="list">
         <ul>
-          <li><img src="https://picsum.photos/id/240/1920/1080" alt="" /></li>
-          <li><img src="https://picsum.photos/id/241/900/600" alt="" /></li>
-          <li><img src="https://picsum.photos/id/242/1920/1080" alt="" /></li>
-          <li><img src="https://picsum.photos/id/243/1024/768" alt="" /></li>
-          <li><img src="https://picsum.photos/id/244/1400/768" alt="" /></li>
-          <li><img src="https://picsum.photos/id/250/1200/600" alt="" /></li>
-          <li><img src="https://picsum.photos/id/251/1920/1080" alt="" /></li>
-          <li><img src="https://picsum.photos/id/247/1024/900" alt="" /></li>
-          <li><img src="https://picsum.photos/id/248/1354/1024" alt="" /></li>
-          <li><img src="https://picsum.photos/id/249/1920/1080" alt="" /></li>
+          {listPhotos()}
           <li></li>
         </ul>
       </div>
