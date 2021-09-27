@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import getDefaultPhoto from './api';
+import Search from './components/Search';
+import Gallery from './components/Gallery';
+import getDefaultPhotos,{searchPhotos} from './api';
+import IMAGE_RESULT_COUNT from './constants';
 
 const App = () => {
   const [photos, setPhotos] = useState([]);
-  useEffect(async() => {
-    setPhotos(await getDefaultPhoto());
+
+  useEffect(async () => {
+    setPhotos(await getDefaultPhotos(IMAGE_RESULT_COUNT));
   }, []);
 
-  const listPhotos = () => {
-    return photos.length!=0 ? photos.map((val,index)=>{return <li key={index}>
-      <img src={val.photoUrl} alt="" />
-    </li>}):null;
+  const search = async (searchText) => {
+    setPhotos(await searchPhotos(searchText,IMAGE_RESULT_COUNT));
   };
+
   return (
     <React.Fragment>
-      <div className="form">
-        <input type="text" name="" placeholder="Search" />
-      </div>
-      <div className="list">
-        <ul>
-          {listPhotos()}
-          <li></li>
-        </ul>
-      </div>
+      <Search searchPhotos={search} />
+      <Gallery photos={photos} />
     </React.Fragment>
   );
 };

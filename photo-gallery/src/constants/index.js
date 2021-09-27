@@ -1,0 +1,4 @@
+const IMAGE_RESULT_COUNT=20;
+
+
+export default IMAGE_RESULT_COUNT;
